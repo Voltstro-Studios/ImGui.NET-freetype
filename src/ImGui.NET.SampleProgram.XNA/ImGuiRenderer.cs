@@ -71,6 +71,7 @@ namespace ImGuiNET.SampleProgram.XNA
         {
             // Get font texture from ImGui
             var io = ImGui.GetIO();
+
             io.Fonts.GetTexDataAsRGBA32(out byte* pixelData, out int width, out int height, out int bytesPerPixel);
 
             // Copy the data to a managed array
