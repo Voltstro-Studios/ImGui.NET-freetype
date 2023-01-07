@@ -15,24 +15,23 @@
     <DocumentationFile Condition="'$(Configuration)' == 'Release'">$(OutputPath)\ImGui.NET.xml</DocumentationFile>
     <RootNamespace>ImGuiNET</RootNamespace>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="freetype-runtimes" Version="2.11.1" />
+  </ItemGroup>
+	
   <ItemGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
     <PackageReference Include="System.Numerics.Vectors" Version="4.4.0" />
     <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="4.4.0" />
     <PackageReference Include="System.Buffers" Version="4.4.0" />
   </ItemGroup>
+	
   <ItemGroup>
-    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
-      <_Parameter1>ImPlot.NET</_Parameter1>
-    </AssemblyAttribute>
-    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
-      <_Parameter1>ImNodes.NET</_Parameter1>
-    </AssemblyAttribute>
+	<InternalsVisibleTo Include="ImPlot.NET" />
+	<InternalsVisibleTo Include="ImNodes.NET" />
   </ItemGroup>
+	
   <ItemGroup>
-    <Content Include="..\..\deps\cimgui\win-x86\cimgui.dll">
-      <PackagePath>runtimes/win-x86/native</PackagePath>
-      <Pack>true</Pack>
-    </Content>
     <Content Include="..\..\deps\cimgui\win-x64\cimgui.dll">
       <PackagePath>runtimes/win-x64/native</PackagePath>
       <Pack>true</Pack>
@@ -41,16 +40,10 @@
       <PackagePath>runtimes/linux-x64/native/libcimgui.so</PackagePath>
       <Pack>true</Pack>
     </Content>
-    <Content Include="..\..\deps\cimgui\osx\cimgui.dylib">
-      <PackagePath>runtimes/osx/native/libcimgui.dylib</PackagePath>
-      <Pack>true</Pack>
-    </Content>
-    <Content Include="build\net40\ImGui.NET.targets">
-      <PackagePath>build/net40/ImGui.NET.targets</PackagePath>
-      <Pack>true</Pack>
-    </Content>
   </ItemGroup>
+	
   <ItemGroup>
     <Folder Include="Generated\" />
   </ItemGroup>
+	
 </Project>
