@@ -931,9 +931,9 @@ namespace ImGuiNET
         {
             ImGuiNative.ImGuiIO_AddMouseViewportEvent((ImGuiIO*)(NativePtr), id);
         }
-        public void AddMouseWheelEvent(float wh_x, float wh_y)
+        public void AddMouseWheelEvent(float wheel_x, float wheel_y)
         {
-            ImGuiNative.ImGuiIO_AddMouseWheelEvent((ImGuiIO*)(NativePtr), wh_x, wh_y);
+            ImGuiNative.ImGuiIO_AddMouseWheelEvent((ImGuiIO*)(NativePtr), wheel_x, wheel_y);
         }
         public void ClearInputCharacters()
         {
