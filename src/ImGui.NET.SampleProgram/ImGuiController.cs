@@ -8,6 +8,7 @@ using System.Runtime.CompilerServices;
 using ImGui.NET.SampleProgram;
 using Veldrid.Sdl2;
 using System.Runtime.InteropServices;
+using ImGuizmoNET;
 
 namespace ImGuiNET
 {
@@ -78,6 +79,7 @@ namespace ImGuiNET
 
             IntPtr context = ImGui.CreateContext();
             ImGui.SetCurrentContext(context);
+            ImGuizmo.SetImGuiContext(context);
             ImGuiIOPtr io = ImGui.GetIO();
 
             io.ConfigFlags |= ImGuiConfigFlags.DockingEnable;
@@ -133,6 +135,7 @@ namespace ImGuiNET
             UpdateMonitors();
 
             ImGui.NewFrame();
+            //ImGuizmo.BeginFrame();
             _frameBegun = true;
         }
 
