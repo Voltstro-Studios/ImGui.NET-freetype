@@ -1,5 +1,9 @@
 # ImGui.NET
 
+This build of ImGui.NET uses our [cimgui-freetype](https://github.com/Voltstro-Studios/cimgui-freetype) builds of cimgui. You can get builds off from our [Azure feed](https://dev.azure.com/Voltstro-Studios/MusleEngine/_artifacts/feed/Pkgs). You can either download them, or add the feed as a NuGet source.
+
+---
+
 This is a .NET wrapper for the immediate mode GUI library, Dear ImGui (https://github.com/ocornut/imgui). ImGui.NET lets you build graphical interfaces using a simple immediate-mode style. ImGui.NET is a .NET Standard library, and can be used on all major .NET runtimes and operating systems.
 
 Included is a basic sample program that shows how to use the library, and renders the UI using [Veldrid](https://github.com/mellinoe/veldrid), a portable graphics library for .NET. By itself, Dear ImGui does not care what technology you use for rendering; it simply outputs textured triangles. Example renderers also exist for MonoGame and OpenTK (OpenGL).
